@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 namespace VsCodeSpecFlow.Hooks
 {
     [Binding]
-    public class Hooks
+    public class InitializeHook
     {
         
     }
