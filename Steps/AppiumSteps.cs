@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using TechTalk.SpecFlow;
@@ -31,12 +32,7 @@ namespace VsCodeSpecFlow.StepDefinitions
         public void ThenResultsAreDisplayed()
         {
             bool t = _scenarioContext.Get<AndroidDriver<AppiumWebElement>>().FindElementById("io.appium.android.apis:id/localvideo").Displayed;
-            
-            if(t != true)
-                throw new System.ArgumentException("Expected true but was false");
-            else
-                System.Console.WriteLine("PASSED");
-            
+            Assert.That(t==true);
         }
     }
 }
