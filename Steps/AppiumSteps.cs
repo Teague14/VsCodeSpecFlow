@@ -31,9 +31,12 @@ namespace VsCodeSpecFlow.StepDefinitions
         public void ThenResultsAreDisplayed()
         {
             bool t = _scenarioContext.Get<AndroidDriver<AppiumWebElement>>().FindElementById("io.appium.android.apis:id/localvideo").Displayed;
-            if(t != true){
+            
+            if(t != true)
                 throw new System.ArgumentException("Expected true but was false");
-            }
+            else
+                System.Console.WriteLine("PASSED");
+            
         }
     }
 }
