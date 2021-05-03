@@ -21,5 +21,11 @@ namespace VsCodeSpecFlow.Hooks
             AppiumDriver appiumDriver = new AppiumDriver();
             _scenarioContext.Set(appiumDriver.InitializeAppium());
         }
+
+        [AfterScenario]
+        public void TearDown()
+        {
+            _scenarioContext.Remove("Driver");
+        }
     }
 }
